@@ -1,0 +1,16 @@
+
+public class StarsA {
+
+	public static void main(String[] args) {
+		final int MAX_ROWS = 1;
+
+		// example from book first quadrant diamond
+		for (int row = 10; row >= MAX_ROWS; row--) {
+			for (int star = row; star >= 1; star--)
+				System.out.print("*");
+
+			System.out.println();
+		}
+
+	}
+}
