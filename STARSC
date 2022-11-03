@@ -1,0 +1,22 @@
+
+public class StarsC {
+
+	public static void main(String[] args) {
+		final int rows = 10;
+
+		// example from book first quadrant diamond
+		for (int i = 1 ; i <= rows; i++ ) 
+		{
+			for (int spaces = 1; spaces <= rows; spaces++)
+			{
+				if (spaces < i) {
+					System.out.print(" ");
+				} else {
+					System.out.print("*");
+				}
+			}
+			System.out.println();
+		}
+	}
+}
+
