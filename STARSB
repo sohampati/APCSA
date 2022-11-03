@@ -1,0 +1,20 @@
+public class StarsB {
+
+	public static void main(String[] args) {
+		final int rows = 10;
+
+		// example from book first quadrant diamond
+		for (int i = 1 ; i <= rows; i++ ) 
+		{
+			for (int j = 0 ; j < rows - i; j++ ) 
+			{
+				System.out.print(" ");
+			}
+			for (int k = 0 ; k < i; k++ ) 
+			{
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+	}
+}
