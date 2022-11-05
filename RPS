@@ -1,0 +1,91 @@
+import java.util.Scanner;
+
+public class RPS {
+
+	public static void main(String[] args) {
+		String humanAns = "";
+		boolean winner;
+		int tieNum = 0, compNum = 0, humanNum = 0;
+		while (!humanAns.equals("quit")) {
+			Scanner scan = new Scanner(System.in);
+			int computerGen = (int) ((Math.random() * 3));
+			System.out.println(
+					"Let's play rock, paper, scissors. Do you want rock(r), paper(p), or scissors(s)? Say \"quit\" to quit.");
+			humanAns = scan.nextLine();
+			int human = 0;
+			String computerTr;
+			if (humanAns.equals("r")) {
+				human = 0;
+				humanAns = "rock";
+			} else if (humanAns.equals("p")) {
+				human = 1;
+				humanAns = "paper";
+			} else if (humanAns.equals("s")) {
+				human = 2;
+				humanAns = "scissors";
+			} else {
+				System.out.println("");
+				humanAns = "quit";
+				human = 3;
+			}
+			if (computerGen == 0) {
+				computerTr = "rock";
+			} else if (computerGen == 1) {
+				computerTr = "paper";
+			} else {
+				computerTr = "scissors";
+			}
+			if (!humanAns.equals("quit")) {
+				System.out.println("The human picked: " + humanAns + "  The computer picked: " + computerTr);
+			}
+
+			if (human == 0) {
+				if (computerGen == 0) {
+					System.out.println("Tie");
+					tieNum++;
+
+				} else if (computerGen == 1) {
+					System.out.println("Computer wins");
+					compNum++;
+				} else if (computerGen == 2) {
+					System.out.println("Human wins");
+					humanNum++;
+				} else {
+					System.out.println("Not possible/debug");
+				}
+			} else if (human == 1) {
+				if (computerGen == 0) {
+					System.out.println("Human wins");
+					humanNum++;
+				} else if (computerGen == 1) {
+					System.out.println("Tie");
+					tieNum++;
+				} else if (computerGen == 2) {
+					System.out.println("Computer wins");
+					compNum++;
+				} else {
+					System.out.println("");
+				}
+			} else if (human == 2) {
+				if (computerGen == 0) {
+					System.out.println("Computer wins");
+					compNum++;
+				} else if (computerGen == 1) {
+					System.out.println("Human wins");
+					humanNum++;
+				} else if (computerGen == 2) {
+					System.out.println("Tie");
+					tieNum++;
+				} else {
+					System.out.println("");
+				}
+			} else {
+				System.out.println("Quit already?");
+			}
+
+		}
+		System.out.println("User wins: " + humanNum);
+		System.out.println("User losses: " + compNum);
+		System.out.println("Ties: " + (tieNum));
+	}
+}
